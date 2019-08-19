@@ -1,2 +1,2 @@
-# founders-and-coders-website
-Kin's Founders and Coders website
+# Kin's Founders and Coders application website
+Thanks for visiting!
