@@ -13,6 +13,28 @@ playBtnPlay.hidden = true;
 rightBtn.addEventListener('click', rightBtnClick);
 leftBtn.addEventListener('click', leftBtnClick);
 playPauseBtn.addEventListener('click', playPause);
+window.addEventListener('keydown', keyPressCheck);
+
+function keyPressCheck(event) {
+    if (event.keyCode === 37) {
+        leftBtnClick();
+    } else if (event.keyCode === 39) {
+        rightBtnClick();
+    } else if (event.keyCode === 32) {
+        event.preventDefault();
+        playPause();
+    }
+}
+
+function rightBtnClick() {
+    carouselScrollRight();
+    pauseCarousel();
+}
+
+function leftBtnClick() {
+    carouselScrollLeft();
+    pauseCarousel();
+}
 
 function carouselScrollRight() {
     if (position === 4) {
@@ -20,12 +42,7 @@ function carouselScrollRight() {
     } else {
         position++;
     }
-    carousel.style.transform = `translate(-${carousel.clientWidth*position}px)`; //ES6 string templating
-}
-
-function rightBtnClick () {
-    carouselScrollRight();
-    pauseCarousel();
+    carousel.style.transform = `translate(-${carousel.clientWidth*position}px)`;
 }
 
 function carouselScrollLeft() {
@@ -37,11 +54,13 @@ function carouselScrollLeft() {
     carousel.style.transform = `translate(-${carousel.clientWidth*position}px)`;
 }
 
-function leftBtnClick () {
-    carouselScrollLeft();
-    pauseCarousel();
+function playPause() {
+    if (carouselIsPlaying) {
+        pauseCarousel();
+    } else {
+        playCarousel();
+    }
 }
-
 function playCarousel() {
     carouselInterval = setInterval(carouselScrollRight, 2000);
     playBtnPlay.hidden = true;
@@ -56,10 +75,3 @@ function pauseCarousel() {
     carouselIsPlaying = false;
 }
 
-function playPause() {
-    if (carouselIsPlaying) {
-        pauseCarousel();
-    } else {
-        playCarousel();
-    }
-}

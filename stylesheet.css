@@ -13,7 +13,6 @@ html {
 }
 
 .background {
-    /* background-color: #D3F4FD; */
     background-image: url(./background-img/pexels-photo-1029624.jpeg);
     background-position: center;
     background-size: cover;
@@ -53,7 +52,7 @@ h1 {
     font-size: 16px;
     border: 0;
     outline: none;
-    position: absolute
+    position: absolute;
 }
 
 .carouselBtn:hover {
@@ -82,13 +81,17 @@ h1 {
     z-index: 100;
     display: flex;
     transform: translate(0);
-    transition: transform 1s;
+    transition: transform 0.7s;
 }
 
 .carouselImg {
     flex: 1;
     max-width: 940px;
     width: 100%;
+}
+
+h3 {
+    padding-top: 20px;
 }
 
 .wordContent {
@@ -110,16 +113,32 @@ h1 {
     }
 }
 
-.linksContainer {
-    text-align: center;
+.all-icon {
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
-.links {
-    display: inline-block;
+.all-icon:hover {
+    opacity: 1;
+}
+
+.links-img {
+    max-height: 150px;
+    padding: 10px 20px;
+}
+
+.mailto {
+    text-decoration: none;
 }
 
 footer {
     font-weight: bold;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
+
+.sm-links {
+    width: 30px;
+    padding: 0px 5px;
+}
+
 
