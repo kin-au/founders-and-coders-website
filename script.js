@@ -1,3 +1,5 @@
+const scrollTop = document.getElementById("scrollTop");
+const toTopBtn = document.getElementById("toTopBtn");
 const carousel = document.getElementById("carouselImages");
 const playPauseBtn = document.getElementById("playBtn");
 const leftBtn = document.getElementById("leftBtn");
@@ -10,10 +12,24 @@ let position = 0;
 
 playBtnPlay.hidden = true;
 
+toTopBtn.addEventListener('click', scrollToTop);
 rightBtn.addEventListener('click', rightBtnClick);
 leftBtn.addEventListener('click', leftBtnClick);
 playPauseBtn.addEventListener('click', playPause);
+window.addEventListener('scroll', showToTopBtn);
 window.addEventListener('keydown', keyPressCheck);
+
+function showToTopBtn() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        toTopBtn.style.display = "block";
+      } else {
+        toTopBtn.style.display = "none";
+      }
+}
+
+function scrollToTop() {
+    scrollTop.scrollIntoView({behavior: 'smooth', block: 'end'})
+}
 
 function keyPressCheck(event) {
     if (event.keyCode === 37) {
