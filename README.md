@@ -1,5 +1,7 @@
 # Kin's Founders and Coders application website
 
+### A one-page website (built using vanilla HTML, CSS and JavaScript), submitted as part of my application to the highly selective Founders and Coders course, starting in October 2019
+
 Website requirements
 
 Create a one-page website in HTML and CSS (using some vanilla JavaScript if you’d like) and host it on GitHub Pages. Your commit history should tell a story, and your website must be written by you, and:
